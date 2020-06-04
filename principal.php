@@ -1,8 +1,7 @@
 <link rel="stylesheet" type="text/css" 
           href="bootstrap/css/zoom.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/zoom.css">
-
-
+    
 <div class="container-fluid bg-3 text-center">    
   <h3>Alguns pensamentos...</h3><br>
   <div class="row">

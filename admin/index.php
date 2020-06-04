@@ -1,6 +1,34 @@
+
+<?php
+// Definimos o nome de usuário e senha de acesso
+$usuario = "WesleySilva";
+$senha = "T0mb4m3nt0.";
+// Criamos uma função que exibirá uma mensagem de erro caso os dados estejam errados
+function erro(){
+    // Definindo Cabeçalhos
+    header('WWW-Authenticate: Basic realm="Administracao"');
+    header('HTTP/1.0 401 Unauthorized');
+    // Mensagem que será exibida
+    echo '<h1>Voce não tem permissão para acessar essa área</h1>';
+    // Pára o carregamento da página
+    exit;
+}
+// Se as informações não foram setadas
+if (!isset($_SERVER['PHP_AUTH_USER']) or !isset($_SERVER['PHP_AUTH_PW'])) {
+    erro();
+} 
+// Se as informações foram setadas
+else {
+    // Se os dados informados forem diferentes dos definidos
+    if ($_SERVER['PHP_AUTH_USER'] != $usuario or $_SERVER['PHP_AUTH_PW'] != $senha) {
+        erro();
+    }
+}
+?>
 <?php
 include "config.inc.php";
-?>
+?> 
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -47,7 +75,7 @@ include "config.inc.php";
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Painel Admin </h1>
+                <h1 class="page-header">Painel Administrativo </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.php">Home</a>
                     </li>

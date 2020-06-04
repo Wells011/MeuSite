@@ -1,7 +1,7 @@
 <?php include "conecta.inc.php"; ?>
 <html>
 <head>
-    <title>MeuSite.com</title>
+    <title>www.meuspensamentos.com.br</title>
 </head>
 <body>
 	<?php
